@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD-Operation-Insertar Empleado </title>
+</head>
+<body>
+    <center>
+        <h1>Operación CRUD Insertar Empleado PostgeSQL</h1>
+        <h3>Nuevo Empleado</h3>       
+        <br/>
+        <hr/>
+        <br/>
+        <form method="POST">
+            {% csrf_token %}        
+        <table border="1">
+            <tr>            
+                <td>Nombre Empleado</td>
+                <td><input type='text' placeholder="Ingresa nombre del empleado..." name="empnombre"></td>
+            </tr>    
+            <tr>
+                <td>Apellido Empleado</td>
+                <td><input type='text' placeholder="Ingresa apellido del empleado..." name="empapellido"></td>
+            </tr>    
+            <tr>
+                <td>Cargo</td>
+                <td><select name="cargo">
+                    <option selected disabled=true>--Seleccionar cargo--</option>
+                    <option>Operario</option>
+                    <option>Recursos Humanos</option>
+                    <option>Programador</option>
+                    <option>Mantenimiento</option>
+                    </select>
+                </td>
+            </tr> 
+            <tr>
+                <td>Salario</td>
+                <td><input type='text' placeholder="Ingresa salario del empleado..." name="salario"></td>
+            </tr> 
+            <tr>
+                <td>Genero</td>
+                <td><input type="radio" name ="genero" value="M">Masculino | 
+                    <input type="radio" name ="genero" value="F">Femenino </td>
+            </tr>  
+            <tr>
+                <td><input type="submit" value="Registrar"></td>
+                <td>
+                    {% if messages %}
+                    {% for mess in messages %} 
+                    <b style="color:green">{{mess}}</b>
+                    {% endfor%}
+                    {% endif %}
+                </td>
+            </tr> 
+        </table>
+
+        <a href="{% url 'showemp' %}">Ir a la Página de Inicio</a>
+        
+    </form>
+    </center>
+    
+</body>
+</html>
