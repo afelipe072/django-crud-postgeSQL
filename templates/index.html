@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD-Operation-PostgreSQL</title>
+   
+    <title>CRUD-Operation-PostgreSQL</title>    
 </head>
 <body>
     <center>
-        <h1>Operación CRUD Django-PostgeSQL</h1>
+        <h1 >Operación CRUD Django-PostgeSQL</h1>
         <h3>Empleados</h3>
         <br/>
         <hr/>
         <br/>
-        <a href="{% url 'insertEmp' %}">Crear un nuevo empleado</a>
+        <a href="{% url 'insertEmp' %}" style="font-weight: bold;color:green;">REGISTRAR UN NUEVO EMPLEADO</a>
         <table border="1">
             <tr>
                 <th>ID Empleado </th>
@@ -32,8 +33,8 @@
                 <td>{{result.cargo}}</td>
                 <td>{{result.salario}}</td>
                 <td>{{result.genero}}</td>
-                <td><a href="http://127.0.0.1:8000/editar/{{result.id}}">Editar</a></td>
-                <td><a href="http://127.0.0.1:8000/eliminar/{{result.id}}" onclick="return confirm('Esta seguro de querer eliminar al empleado?')">Eliminar</a></td>
+                <td><a href="http://127.0.0.1:8000/editar/{{result.id}}" style="font-weight: bold;color:yellowgreen;">EDITAR</a></td>
+                <td><a href="http://127.0.0.1:8000/eliminar/{{result.id}}" style="font-weight: bold;color:red;" onclick="return confirm('Esta seguro de querer eliminar al empleado?')">ELIMINAR</a></td>
             </tr>
             {% endfor %}
 

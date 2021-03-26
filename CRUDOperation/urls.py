@@ -21,8 +21,8 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^inicio/',showemp, name="showemp"),    
     url(r'^insertar/',insertEmp, name="insertEmp"),
-    url(r'editar/(?P<id>\d)',editarEmp, name="editarEmp"),
-    url(r'actualizar/(?P<id>\d)',actualizarEmp,name="actualizarEmp"),
-    url(r'eliminar/(?P<id>\d)',eliminar, name="eliminar")
+    url(r'editar/(?P<id>\d+)',editarEmp, name="editarEmp"),
+    url(r'actualizar/(?P<id>\d+)',actualizarEmp,name="actualizarEmp"),
+    url(r'eliminar/(?P<id>\d+)',eliminar, name="eliminar")
     
 ]
